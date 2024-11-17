@@ -601,6 +601,7 @@ local manifestYaml(value) =
             optional: true,
             dependencies: {
               binaryornot: '^0.4.4',
+              commitizen: '^3.31.0',
               mypy: '^1.13.0',
               ruff: '^0.7.4',
               yapf: '^0.43.0',

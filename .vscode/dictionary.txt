@@ -1,6 +1,6 @@
-
 binaryornot
 codeowners
+commitizen
 conftest
 coveragerc
 davidanson

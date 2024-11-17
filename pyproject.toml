@@ -4,6 +4,11 @@ requires = ["poetry-core"]
 
 [tool]
 
+[tool.commitizen]
+tag_format = "v$version"
+version_files = [".project.jsonnet", "README.md", "package.json"]
+version_provider = "poetry"
+
 [tool.coverage]
 
 [tool.coverage.report]
@@ -61,6 +66,7 @@ optional = true
 
 [tool.poetry.group.dev.dependencies]
 binaryornot = "^0.4.4"
+commitizen = "^3.31.0"
 mypy = "^1.13.0"
 ruff = "^0.7.4"
 yapf = "^0.43.0"
