@@ -26,8 +26,9 @@ local module_name = 'binaryornot-stubs';
 local repository_name = project_name;
 local repository_uri = 'https://github.com/%s/%s' % [github_username, project_name];
 
-local min_python_minor_version = '11';
-local supported_python_versions = ['3.%s' % min_python_minor_version] + [('3.%s' % i) for i in [12, 13]];
+local min_python_minor_version = '9';
+local supported_python_versions = ['3.%s' % min_python_minor_version] +
+                                  [('3.%s' % i) for i in [10, 11, 12, 13]];
 local yarn_version = '4.5.0';
 
 local shared_ignore = [
@@ -37,6 +38,7 @@ local shared_ignore = [
   '.pnp.*',
   '/.yarn/**/*.cjs',
   '/.yarn/install-state.gz',
+  '/dist/',
   '__pycache__/',
   'node_modules/',
 ];
@@ -576,11 +578,11 @@ local manifestYaml(value) =
         version: version,
         authors: authors,
         classifiers: std.sort([
-          'Development Status :: 2 - Pre-Alpha',
+          'Development Status :: 5 - Production/Stable',
           'Intended Audience :: Developers',
           'License :: OSI Approved :: MIT License',
           'Programming Language :: Python',
-          'Typing :: Typed',
+          'Typing :: Stubs Only',
         ] + [('Programming Language :: Python :: %s' % i) for i in supported_python_versions]),
         description: description,
         homepage: repository_uri,

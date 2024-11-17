@@ -4,5 +4,6 @@
 .pnp.*
 /.yarn/**/*.cjs
 /.yarn/install-state.gz
+/dist/
 __pycache__/
 node_modules/
