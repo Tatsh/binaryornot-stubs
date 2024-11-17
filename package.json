@@ -12,7 +12,7 @@
     "yarn-audit-fix": "^10.1.0"
   },
   "homepage": "https://github.com/Tatsh/binaryornot-stubs",
-  "keywords": ["command line", "library", "media"],
+  "keywords": ["stubs", "typing"],
   "license": "MIT",
   "markdownlint-cli2": {
     "config": {

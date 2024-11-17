@@ -20,7 +20,7 @@ local github_funding = {
   patreon: 'tatsh2',
 };
 local github_theme = 'jekyll-theme-hacker';
-local keywords = ['command line', 'library', 'media'];
+local keywords = ['stubs', 'typing'];
 local license = 'MIT';
 local module_name = 'binaryornot-stubs';
 local repository_name = project_name;
@@ -55,6 +55,10 @@ local manifestYaml(value) =
   std.manifestYamlDoc(value, true, false);
 
 {
+  '.gitattributes': manifestLines([
+    '*.lock binary',
+    '/.yarn/**/*.cjs',
+  ]),
   '.github/FUNDING.yml': manifestYaml(github_funding),
   '.github/dependabot.yml': manifestYaml({
     updates: [
@@ -617,6 +621,11 @@ local manifestYaml(value) =
             },
           },
         },
+      },
+      commitizen: {
+        tag_format: 'v$version',
+        version_files: ['.project.jsonnet', 'CITATION.cff', 'README.md', 'package.json'],
+        version_provider: 'poetry',
       },
       coverage: {
         report: {

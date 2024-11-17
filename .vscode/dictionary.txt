@@ -17,6 +17,7 @@ markdownlint
 mypy
 norecursedirs
 numpy
+paren
 pascalreitermann
 pipx
 pycache

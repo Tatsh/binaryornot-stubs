@@ -6,7 +6,7 @@ requires = ["poetry-core"]
 
 [tool.commitizen]
 tag_format = "v$version"
-version_files = [".project.jsonnet", "README.md", "package.json"]
+version_files = [".project.jsonnet", "CITATION.cff", "README.md", "package.json"]
 version_provider = "poetry"
 
 [tool.coverage]
@@ -48,7 +48,7 @@ classifiers = [
 ]
 description = "Stubs for binaryornot."
 homepage = "https://github.com/Tatsh/binaryornot-stubs"
-keywords = ["command line", "library", "media"]
+keywords = ["stubs", "typing"]
 license = "MIT"
 name = "binaryornot-stubs"
 readme = "README.md"
