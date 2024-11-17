@@ -4,7 +4,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/binaryornot-stubs)](https://pypi.org/project/binaryornot-stubs/)
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/Tatsh/binaryornot-stubs)
 ![GitHub](https://img.shields.io/github/license/Tatsh/binaryornot-stubs)
-![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/binaryornot-stubs/v0.0.2/master)
+![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/binaryornot-stubs/v0.0.3/master)
 
 Stubs for `binaryornot`.
 

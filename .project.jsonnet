@@ -1,6 +1,6 @@
 local project_name = 'binaryornot-stubs';
 local date_released = '2024-11-16';
-local version = '0.0.2';
+local version = '0.0.3';
 
 local authors = ['Andrew Udvare <audvare@gmail.com>'];
 local citation_authors = [
