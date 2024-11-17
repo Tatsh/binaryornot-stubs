@@ -53,7 +53,7 @@ license = "MIT"
 name = "binaryornot-stubs"
 readme = "README.md"
 repository = "https://github.com/Tatsh/binaryornot-stubs"
-version = "0.0.1"
+version = "0.0.2"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4"
