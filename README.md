@@ -7,3 +7,9 @@
 ![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/binaryornot-stubs/v0.0.1/master)
 
 Stubs for `binaryornot`.
+
+## Installation
+
+```shell
+pip install binaryornot-stubs
+```
