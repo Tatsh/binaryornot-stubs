@@ -594,7 +594,6 @@ local manifestYaml(value) =
         },
         dependencies: {
           python: '>=3.%s,<4' % min_python_minor_version,
-          binaryornot: '^0.4.4',
         },
         group: {
           dev: {

@@ -56,7 +56,6 @@ repository = "https://github.com/Tatsh/binaryornot-stubs"
 version = "0.0.1"
 
 [tool.poetry.dependencies]
-binaryornot = "^0.4.4"
 python = ">=3.9,<4"
 
 [tool.poetry.group]
