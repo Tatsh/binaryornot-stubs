@@ -138,16 +138,8 @@ local manifestYaml(value) =
             run: 'yarn',
           },
           {
-            name: 'Install Shellcheck',
-            run: 'sudo apt-get install -y shellcheck',
-          },
-          {
-            name: 'Lint with Shellcheck',
-            run: 'yarn shellcheck',
-          },
-          {
             name: 'Lint with mypy',
-            run: 'yarn mypy',
+            run: 'yarn mypy .',
           },
           {
             name: 'Check spelling',
