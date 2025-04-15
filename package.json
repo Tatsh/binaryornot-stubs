@@ -1,5 +1,56 @@
 {
   "contributors": ["Andrew Udvare <audvare@gmail.com>"],
+  "cspell": {
+    "dictionaryDefinitions": [
+      {
+        "name": "main",
+        "path": ".vscode/dictionary.txt"
+      }
+    ],
+    "enableGlobDot": true,
+    "enabledLanguageIds": [
+      "git-commit",
+      "ignore",
+      "jinja",
+      "json",
+      "jsonc",
+      "markdown",
+      "plaintext",
+      "python",
+      "restructuredtext",
+      "text",
+      "toml",
+      "yaml",
+      "yml"
+    ],
+    "ignorePaths": [
+      "*.1",
+      "*.har",
+      "*.log",
+      ".*_cache/**",
+      ".coverage",
+      ".directory",
+      ".doctrees",
+      ".git",
+      ".vscode/extensions.json",
+      ".yarn/**/*.cjs",
+      "__pycache__",
+      "_build/**",
+      "build/**",
+      "dist/**",
+      "docs/_build/**",
+      "htmlcov/**",
+      "man/**",
+      "node_modules/**"
+    ],
+    "language": "en-GB",
+    "languageSettings": [
+      {
+        "dictionaries": ["main"],
+        "languageId": "*"
+      }
+    ]
+  },
   "devDependencies": {
     "@prettier/plugin-xml": "^3.4.1",
     "cspell": "^8.18.1",
@@ -9,10 +60,10 @@
     "prettier-plugin-sort-json": "^4.1.1",
     "prettier-plugin-toml": "^2.0.4",
     "pyright": "^1.1.398",
-    "yarn-audit-fix": "^10.1.1"
+    "yarn-audit-fix": "^10.1.0"
   },
-  "homepage": "https://github.com/Tatsh/binaryornot-stubs",
-  "keywords": ["stubs", "typing"],
+  "homepage": "https://tatsh.github.io/binaryornot-stubs/",
+  "keywords": ["pep561", "stubs", "types"],
   "license": "MIT",
   "markdownlint-cli2": {
     "config": {
@@ -27,7 +78,7 @@
     }
   },
   "name": "binaryornot-stubs",
-  "packageManager": "yarn@4.5.0",
+  "packageManager": "yarn@4.9.0",
   "prettier": {
     "endOfLine": "lf",
     "iniSpaceAroundEquals": true,
@@ -55,12 +106,16 @@
     "url": "git@github.com:Tatsh/binaryornot-stubs.git"
   },
   "scripts": {
-    "check-formatting": "prettier -c './**/*.cff' './**/*.json' './**/*.md' './**/*.toml' './**/*.y*ml' && poetry run yapf -rd .",
-    "check-spelling": "cspell --no-progress './**/*'  './**/.*'",
-    "format": "prettier -w './**/*.cff' './**/*.json' './**/*.md' './**/*.toml' './**/*.y*ml' && poetry run yapf -ri .",
+    "check-formatting": "yarn prettier -c . && poetry run yapf -prd . && yarn markdownlint-cli2 '**/*.md' '#node_modules'",
+    "check-spelling": "yarn cspell --no-progress './**/*'  './**/.*'",
+    "format": "prettier -w . && poetry run yapf -ri . && yarn markdownlint-cli2 --fix '**/*.md' '#node_modules'",
     "mypy": "poetry run mypy",
     "qa": "yarn mypy . && yarn ruff . && yarn check-spelling && yarn check-formatting",
-    "ruff": "poetry run ruff check --fix"
+    "regen": "poetry run wiswa",
+    "ruff": "poetry run ruff check",
+    "ruff:fix": "poetry run ruff check --fix",
+    "test": "poetry run pytest",
+    "test:cov": "yarn test --cov . --cov-report html --cov-report term-missing:skip-covered"
   },
   "version": "0.0.3"
 }

@@ -2,22 +2,73 @@
 build-backend = "poetry.core.masonry.api"
 requires = ["poetry-core"]
 
+[project]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Stubs Only",
+]
+description = "PEP 561 type stubs for binaryornot."
+dynamic = ["dependencies", "requires-python"]
+keywords = ["pep561", "stubs", "types"]
+license = "MIT"
+name = "binaryornot-stubs"
+readme = "README.md"
+version = "0.0.3"
+
+[[project.authors]]
+email = "audvare@gmail.com"
+name = "Andrew Udvare"
+
+[project.optional-dependencies]
+erdantic = ["erdantic<2.0"]
+
+[project.scripts]
+
+[project.urls]
+Issues = "https://github.com/Tatsh/binaryornot-stubs/issues"
+documentation = "https://binaryornot-stubs.readthedocs.org"
+homepage = "https://tatsh.github.io/binaryornot-stubs/"
+repository = "https://github.com/Tatsh/binaryornot-stubs"
+
 [tool]
 
 [tool.commitizen]
 tag_format = "v$version"
-version_files = [".project.jsonnet", "CITATION.cff", "README.md", "package.json"]
-version_provider = "poetry"
+version_files = [
+  ".wiswa.jsonnet",
+  "CHANGELOG.md",
+  "CITATION.cff",
+  "README.md",
+  "package.json",
+  "binaryornot-stubs/__init__.py",
+]
+version_provider = "pep621"
 
 [tool.coverage]
 
 [tool.coverage.report]
+exclude_also = ["if TYPE_CHECKING:"]
 omit = ["conftest.py", "tests.py", "tests/test_*.py"]
 show_missing = true
 
 [tool.coverage.run]
 branch = true
 omit = ["conftest.py", "tests.py", "tests/test_*.py"]
+
+[tool.djlint]
+max_line_length = 100
+no_line_after_yaml = true
+preserve_blank_lines = true
+preserve_leading_space = true
+profile = "jinja"
+use_gitignore = true
 
 [tool.doc8]
 max-line-length = 100
@@ -26,37 +77,17 @@ max-line-length = 100
 cache_dir = "~/.cache/mypy"
 explicit_package_bases = true
 platform = "linux"
-python_version = "3.9"
+python_version = "3.10"
 show_column_numbers = true
 strict = true
 strict_optional = true
 warn_unreachable = true
 
 [tool.poetry]
-authors = ["Andrew Udvare <audvare@gmail.com>"]
-classifiers = [
-  "Development Status :: 5 - Production/Stable",
-  "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: 3.9",
-  "Typing :: Stubs Only",
-]
-description = "Stubs for binaryornot."
-homepage = "https://github.com/Tatsh/binaryornot-stubs"
-keywords = ["stubs", "typing"]
-license = "MIT"
-name = "binaryornot-stubs"
-readme = "README.md"
-repository = "https://github.com/Tatsh/binaryornot-stubs"
-version = "0.0.3"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<4"
+python = ">=3.10,<3.14"
+typing-extensions = "^4.13.1"
 
 [tool.poetry.group]
 
@@ -65,61 +96,76 @@ optional = true
 
 [tool.poetry.group.dev.dependencies]
 binaryornot = "^0.4.4"
-commitizen = ">=3.31,<5.0"
-mypy = "^1.13.0"
-ruff = ">=0.7.4,<0.12.0"
+commitizen = "^4.5.0"
+djlint = "^1.36.4"
+mypy = ">=1.12,<1.16"
+ruff = "^0.11.2"
 yapf = "^0.43.0"
 
+[tool.poetry.group.docs]
+
+[tool.poetry.group.docs.dependencies]
+autodoc-pydantic = "^2.2.0"
+doc8 = "^1.1.2"
+docutils = "^0.21.2"
+esbonio = "^0.16.5"
+numpydoc = "^1.8.0"
+restructuredtext-lint = "^1.4.0"
+sphinx = "<8.2.0"
+sphinx-click = "^6.0.0"
+sphinx-datatables = "^0.2.1"
+sphinx-hoverxref = "^1.4.2"
+sphinx-immaterial = "^0.13.4"
+
+[tool.poetry.group.docs.dependencies.enum-tools]
+extras = ["sphinx"]
+version = "^0.12.0"
+
 [tool.poetry.group.tests]
-optional = true
 
 [tool.poetry.group.tests.dependencies]
-coveralls = "^3.3.1"
-mock = "^5.1.0"
-pytest = "^8.3.3"
-pytest-cov = "^5.0.0"
+mock = "^5.2.0"
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
 pytest-mock = "^3.14.0"
+
+[tool.poetry.group.tests.dependencies.coveralls]
+python = "<3.13"
+version = "^4.0.1"
 
 [[tool.poetry.packages]]
 include = "binaryornot-stubs"
-
-[tool.poetry.urls]
-Issues = "https://github.com/Tatsh/binaryornot-stubs/issues"
 
 [tool.pyright]
 deprecateTypingAliases = true
 enableExperimentalFeatures = true
 include = ["./binaryornot-stubs", "./tests"]
 pythonPlatform = "Linux"
-pythonVersion = "3.9"
+pythonVersion = "3.10"
 reportCallInDefaultInitializer = "warning"
-reportImplicitOverride = "warning"
+reportImplicitOverride = "none"
 reportImportCycles = "error"
 reportMissingModuleSource = "error"
 reportPropertyTypeMismatch = "error"
 reportShadowedImports = "error"
-reportUninitializedInstanceVariable = "error"
 reportUnnecessaryTypeIgnoreComment = "none"
-stubPath = "./.stubs"
 typeCheckingMode = "off"
 useLibraryCodeForTypes = false
 
 [tool.pytest]
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "config.env.pytest"
-django_find_project = false
 mock_use_standalone_module = true
 norecursedirs = ["node_modules"]
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
 testpaths = ["tests"]
 
 [tool.ruff]
 cache-dir = "~/.cache/ruff"
-extend-exclude = []
 force-exclude = true
 line-length = 100
-namespace-packages = ["tests"]
-target-version = "py39"
+namespace-packages = ["docs", "tests"]
+target-version = "py310"
 unsafe-fixes = true
 
 [tool.ruff.lint]
@@ -183,6 +229,7 @@ extend-select = [
   "YTT",
 ]
 ignore = [
+  "A002",
   "A005",
   "ANN401",
   "ARG001",
@@ -204,6 +251,9 @@ ignore = [
   "D212",
   "E303",
   "EM101",
+  "FBT001",
+  "I001",
+  "N",
   "N818",
   "PLR0912",
   "PLR0913",
@@ -212,12 +262,17 @@ ignore = [
   "PLR0917",
   "PLR1702",
   "PLR6301",
+  "S",
   "S101",
   "S404",
   "S603",
+  "T201",
   "TD002",
   "TD003",
   "TD004",
+  "TID252",
+  "UP046",
+  "UP047",
 ]
 preview = true
 
