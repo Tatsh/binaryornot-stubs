@@ -22,7 +22,9 @@ jsonnet
 jsonschema
 lextudio
 libjsonnet
+multiline
 mypy
+noninfringement
 norecursedirs
 numpy
 numpydoc
@@ -37,6 +39,7 @@ pyright
 pytest
 regen
 schemafile
+sublicense
 tatsh
 testpaths
 udvare
