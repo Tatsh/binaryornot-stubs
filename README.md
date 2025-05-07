@@ -6,6 +6,10 @@
 [![License](https://img.shields.io/github/license/Tatsh/binaryornot-stubs)](https://github.com/Tatsh/binaryornot-stubs/blob/master/LICENSE.txt)
 [![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/binaryornot-stubs/v0.0.3/master)](https://github.com/Tatsh/binaryornot-stubs/compare/v0.0.3...master)
 
+## Deprecation notice
+
+These types have been merged into Typeshed. Please use [types-binaryornot](https://pypi.org/project/types-binaryornot/).
+
 PEP 561 type stubs for binaryornot.
 
 ## Installation
