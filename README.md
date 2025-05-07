@@ -4,7 +4,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/binaryornot-stubs)](https://pypi.org/project/binaryornot-stubs/)
 [![GitHub tag (with filter)](https://img.shields.io/github/v/tag/Tatsh/binaryornot-stubs)](https://github.com/Tatsh/binaryornot-stubs/tags)
 [![License](https://img.shields.io/github/license/Tatsh/binaryornot-stubs)](https://github.com/Tatsh/binaryornot-stubs/blob/master/LICENSE.txt)
-[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/binaryornot-stubs/v0.0.3/master)](https://github.com/Tatsh/binaryornot-stubs/compare/v0.0.3...master)
+[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/binaryornot-stubs/v0.0.4/master)](https://github.com/Tatsh/binaryornot-stubs/compare/v0.0.4...master)
 
 ## Deprecation notice
 

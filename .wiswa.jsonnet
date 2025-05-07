@@ -5,7 +5,7 @@ local utils = import 'utils.libjsonnet';
   description: 'PEP 561 type stubs for binaryornot.',
   keywords: ['pep561', 'stubs', 'types'],
   project_name: 'binaryornot-stubs',
-  version: '0.0.3',
+  version: '0.0.4',
   citation+: {
     'date-released': '2025-04-15',
   },

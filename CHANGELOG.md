@@ -29,4 +29,4 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/binaryornot-stubs/-/compare/v0.0.3...HEAD
+[unreleased]: https://github.com/Tatsh/binaryornot-stubs/-/compare/v0.0.4...HEAD
